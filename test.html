@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test</title>
   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #333;
+      line-height: 1.5rem;
     }
   
     header {
@@ -55,6 +60,7 @@
     /* GRID STUFF */
     .container {
       display: grid;
+      min-width: 320px;
       max-width: 800px;
       max-height: 600px;
       margin: auto;
@@ -92,6 +98,30 @@
       grid-area: footer;
     } 
 
+    @media screen and (max-width: 576px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+      "footer"
+      "aside";
+      }
+
+      aside {
+        display: none;
+      }
+
+      header {
+        text-align: center;
+      }
+      nav, footer {
+        display: flex;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
