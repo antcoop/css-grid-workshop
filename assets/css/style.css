@@ -1,0 +1,103 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.5rem;
+  color: #333;
+}
+h2, h4 {
+  font-family: 'Raleway', 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: 'Slabo 13px', 'Arial Narrow Bold', sans-serif;
+}
+
+p {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.subhead p,
+.quoted {
+  font-weight: 100;
+}
+
+.quoted {
+  font-size: 1.5rem;
+}
+
+.photo {
+  background-color: #333;
+  min-height: 280px;
+  min-width: 280px;
+}
+
+.quoted p::before {
+  content: "\2033";
+  display: block;
+  font-size: 6rem;
+  position: relative;
+}
+
+.lead {
+  column-count: 2;
+}
+
+.lead p:first-of-type::first-letter {
+  -webkit-initial-letter: 4;
+  initial-letter: 4;
+  font-size: 4.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  line-height: 4.5rem;
+  float: left;
+}
+
+/* GRID ITEMS */
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+}
+
+main {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header"
+    "left right right";
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+}
+
+.right {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header";
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+h2 {
+  grid-area: header;
+}
