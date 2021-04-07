@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      line-height: 1.5rem;
+    }
+  
+    header {
+      background-color: #333;
+      color: #fff;
+    }
+
+    header, nav, aside, main, footer {
+      padding: 20px;
+    }
+
+    nav, 
+    nav a,
+    nav a:link {
+      background-color: coral;
+      color: #333;
+    }
+
+    aside, 
+    aside a,
+    aside a:link {
+      background-color: goldenrod;
+      color: #333;
+    }
+
+    main {
+      background-color: steelblue;
+      color: #fff;
+    }
+
+    footer,
+    footer a,
+    footer a:link {
+      background-color: forestgreen;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 20px;
+    }
+
+
+    /* GRID STUFF */
+    .container {
+      display: grid;
+      min-width: 320px;
+      max-width: 800px;
+      max-height: 600px;
+      margin: auto;
+      grid-template-columns: 25% 50% 25%;
+      grid-template-rows: 25% 60px auto 60px;
+      grid-template-areas: 
+      "header header header"
+      "nav nav nav"
+      "aside main main"
+      "footer footer footer";
+      justify-content: stretch;
+      align-items: stretch;
+      grid-gap: 8px;
+    }
+
+    header {
+      grid-area: header;
+    } 
+
+    nav {
+      grid-area: nav;
+    }
+
+    aside {
+      grid-area: aside;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    footer {
+      grid-area: footer;
+    } 
+
+    @media screen and (max-width: 576px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+      "footer"
+      "aside";
+      }
+
+      aside {
+        display: none;
+      }
+
+      header {
+        text-align: center;
+      }
+      nav, footer {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER, NAV, MAIN, ASIDE, FOOTER -->
+  <div class="container">
+    <header>
+      <h1>This is the Title</h1>
+    </header>
+    <nav>
+      <a href="#1">Home</a>
+      <a href="#2">About</a>
+      <a href="#3">Portfolio</a>
+    </nav>
+    <aside>
+      <a href="#1">Fun Facts</a>
+      <a href="#2">Good Times</a>
+      <a href="#3">Weekends</a>
+    </aside>
+    <main>
+      <h2>This is a Sub Title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+      <h2>This is a Sub Title</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam, animi soluta quo error voluptatum harum illo praesentium nemo, ipsam maiores modi rerum sint provident! Labore reiciendis alias ullam delectus?</p>
+    </main>
+    <footer>
+      <a href="#1">Home</a>
+      <a href="#2">About</a>
+      <a href="#3">Portfolio</a>
+    </footer>
+  </div>
+</body>
+</html>

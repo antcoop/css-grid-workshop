@@ -1,11 +1,16 @@
-html {
+html, body {
   margin: 0;
   padding: 0;
 }
 body {
   line-height: 1.5rem;
   color: #333;
+  margin: 0;
 }
+h2 {
+  font-size: 2.5rem;
+}
+
 h2, h4 {
   font-family: 'Raleway', 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   font-weight: normal;
@@ -14,6 +19,8 @@ h2, h4 {
 
 h3 {
   font-family: 'Slabo 13px', 'Arial Narrow Bold', sans-serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 p {
@@ -41,6 +48,7 @@ p {
   display: block;
   font-size: 6rem;
   position: relative;
+  margin-top: 4rem;
 }
 
 .lead {
@@ -57,4 +65,57 @@ p {
   float: left;
 }
 
-/* GRID ITEMS HERE */
+/* GRID ITEMS */
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header";
+  grid-gap: 16px;
+  align-items: start;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header";
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+}
+
+h2 {
+  grid-area: header;
+}
+
+@media screen and (max-width: 960px) {
+  .container, main, aside {
+    grid-template-columns: 1fr;
+  }
+  main, aside {
+    grid-template-areas: "header";
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .lead {
+    column-count: 1;
+  }
+}
