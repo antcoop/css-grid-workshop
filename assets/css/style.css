@@ -57,47 +57,4 @@ p {
   float: left;
 }
 
-/* GRID ITEMS */
-
-.container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  column-gap: 16px;
-  row-gap: 16px;
-  align-items: start;
-}
-
-main {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "header header header"
-    "left right right";
-  column-gap: 16px;
-  row-gap: 16px;
-  align-items: start;
-}
-
-.right {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr;
-}
-
-aside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "header header";
-  column-gap: 16px;
-  row-gap: 16px;
-}
-
-h2 {
-  grid-area: header;
-}
+/* GRID ITEMS HERE */
